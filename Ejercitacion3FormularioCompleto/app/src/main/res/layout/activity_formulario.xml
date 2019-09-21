@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#C06F6F"
+    tools:context=".ActivityFormulario">
+
+    <TextView
+        android:id="@+id/titulo_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Completar el Formulario"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_margin="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"/>
+
+    <EditText
+        android:id="@+id/nombre_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titulo_TextView"
+        android:textSize="20dp"
+        android:layout_margin="5dp"
+        android:hint="Nombre"/>
+
+    <EditText
+        android:id="@+id/apellido_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nombre_EditText"
+        android:textSize="20dp"
+        android:layout_margin="5dp"
+        android:hint="Apellido"/>
+
+    <EditText
+        android:id="@+id/edad_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/apellido_EditText"
+        android:hint="Edad"
+        android:layout_margin="5dp"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/carrera_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edad_EditText"
+        android:textSize="20dp"
+        android:layout_margin="5dp"
+        android:hint="Carrera"/>
+
+    <EditText
+        android:id="@+id/mail_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/carrera_EditText"
+        android:textSize="20dp"
+        android:layout_margin="5dp"
+        android:hint="Email"/>
+
+    <TextView
+        android:id="@+id/textoinfo_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mail_EditText"
+        android:text="Deseo recibir mail informandome sobre los siguientes eventos: "
+        android:textSize="20sp"
+        android:textStyle="italic"
+        android:layout_margin="5dp"
+        />
+
+    <CheckBox
+        android:id="@+id/torneo_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="25dp"
+        android:layout_margin="15dp"
+        android:layout_below="@id/textoinfo_TextView"
+        android:text="Torneos" />
+
+    <CheckBox
+        android:id="@+id/meetup_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/torneo_checkBox"
+        android:layout_alignTop="@id/torneo_checkBox"
+        android:text="Meetup" />
+
+    <CheckBox
+        android:id="@+id/asados_checkBox"
+        android:layout_width="112dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/meetup_checkBox"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="15dp"
+        android:layout_toRightOf="@id/meetup_checkBox"
+        android:text="Asados"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/boton_Enviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/meetup_checkBox"
+        android:layout_marginBottom="-118dp"
+        android:layout_centerHorizontal="true"
+        android:text="Enviar"
+        android:gravity="center" />
+
+
+</RelativeLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context=".ActivityFinal">
+
+    <TextView
+        android:id="@+id/textView_Envio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Envio Realizado Correctamente!!"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="50sp"
+        />
+
+    <TextView
+        android:id="@+id/textView_infoenviada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informacion enviada:"
+        android:layout_below="@id/textView_Envio"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30sp"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textView_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_infoenviada"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="43dp"
+        android:text="nombre obtenido"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView_apellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView_nombre"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/textView_nombre"
+        android:gravity="center_horizontal"
+        android:text="apellido obtenido"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView_edad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edad obtenida"
+        android:layout_below="@id/textView_nombre"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textView_carrera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="carrera obtenida"
+        android:layout_below="@id/textView_edad"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textView_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="email obtenida"
+        android:layout_below="@id/textView_carrera"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textView_infodeseada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Desea recibir informacion sobre:"
+        android:layout_below="@id/textView_email"
+        android:gravity="center"
+        android:textSize="23dp"
+        android:layout_margin="30sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textView_opcioneselegidas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="opciones elegidas"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textView_infodeseada"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+
+
+</RelativeLayout>
