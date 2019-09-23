@@ -12,7 +12,7 @@ public class ActivityFinal extends AppCompatActivity {
 
     public static final String NOMBRE = "Nombre";
     public static final String APELLIDO = "Apellido";
-    public static final Integer EDAD = 7;
+    public static final String EDAD = "";
     public static final String CARRERA = "Carrera";
     public static final String EMAIL = "Email";
     public static final String TORNEOS = "Torneos";
@@ -41,7 +41,7 @@ public class ActivityFinal extends AppCompatActivity {
         TextView anos = findViewById(R.id.textView_edad);
         Intent intent = getIntent();
         Bundle bundledad = intent.getExtras();
-        Integer anios = bundledad.getInt(String.valueOf(EDAD));
+        String anios = String.valueOf(bundledad.getInt(EDAD));
         anos.setText(anios);
 
         TextView carrera = findViewById(R.id.textView_carrera);
