@@ -13,7 +13,7 @@ public class ActivityFinal extends AppCompatActivity {
 
     public static final String NOMBRE = "Nombre";
     public static final String APELLIDO = "Apellido";
-    public static final Integer EDAD = 0 ;
+    public static final String EDAD = "0" ;
     public static final String CARRERA = "Carrera";
     public static final String EMAIL = "Email";
     public static final String TORNEOS = "Torneos";
@@ -45,8 +45,8 @@ public class ActivityFinal extends AppCompatActivity {
         String ape = bundle.getString(APELLIDO);
         apellido.setText(ape);
 
-        Integer anios = bundle.getInt(EDAD));
-        edad.setin(anios);
+        Integer anios = bundle.getInt(EDAD);
+        edad.setText(anios.toString());
 
         String carre = bundle.getString(CARRERA);
         carrera.setText(carre);
