@@ -2,6 +2,7 @@ package com.example.ejercitacion3formulariocompleto;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.CheckBox;
@@ -12,7 +13,7 @@ public class ActivityFinal extends AppCompatActivity {
 
     public static final String NOMBRE = "Nombre";
     public static final String APELLIDO = "Apellido";
-    public static final String EDAD = "";
+    public static final Integer EDAD = 0 ;
     public static final String CARRERA = "Carrera";
     public static final String EMAIL = "Email";
     public static final String TORNEOS = "Torneos";
@@ -20,60 +21,69 @@ public class ActivityFinal extends AppCompatActivity {
     public static final String ASADOS = "Asados";
 
 
+    private TextView nombre, apellido, edad, carrera, email, asados, mitup, torneos;
 
+
+
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final);
 
-        TextView nombre = findViewById(R.id.textView_nombre);
-        Intent intentname = getIntent();
-        Bundle bundlename = intentname.getExtras();
-        String name = bundlename.getString(NOMBRE);
+        buscarVariables();
+
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+
+        String name = bundle.getString(NOMBRE);
         nombre.setText(name);
 
-        TextView apellido = findViewById(R.id.textView_apellido);
-        Intent intentape = getIntent();
-        Bundle bundleape = intentape.getExtras();
-        String ape = bundleape.getString(APELLIDO);
+        String ape = bundle.getString(APELLIDO);
         apellido.setText(ape);
 
-        TextView anos = findViewById(R.id.textView_edad);
-        Intent intent = getIntent();
-        Bundle bundledad = intent.getExtras();
-        String anios = String.valueOf(bundledad.getInt(EDAD));
-        anos.setText(anios);
+        Integer anios = bundle.getInt(EDAD));
+        edad.setin(anios);
 
-        TextView carrera = findViewById(R.id.textView_carrera);
-        Intent intentcar = getIntent();
-        Bundle bundlecar = intentcar.getExtras();
-        String carre = bundlecar.getString(CARRERA);
+        String carre = bundle.getString(CARRERA);
         carrera.setText(carre);
 
-        TextView email = findViewById(R.id.textView_email);
-        Intent intentma = getIntent();
-        Bundle bundlema = intentma.getExtras();
-        String mail = bundlema.getString(EMAIL);
+        String mail = bundle.getString(EMAIL);
         email.setText(mail);
 
-        TextView textView =findViewById(R.id.textView_opcioneselegidas);
+        Boolean meetup = bundle.getBoolean(MEETUP);
+        Boolean asado = bundle.getBoolean(ASADOS);
+        Boolean torneo = bundle.getBoolean(TORNEOS);
 
-        CheckBox torn = findViewById(R.id.torneo_checkBox);
-        Intent intchetor = getIntent();
-        Bundle bundletorn = intchetor.getExtras();
-        String torneo = bundletorn.getString(TORNEOS);
+        if (meetup) {
+            mitup.setText("Reuniones informativas o recreativas");
+        }
 
-        CheckBox meet = findViewById(R.id.meetup_checkBox);
-        Intent intemeet = getIntent();
-        Bundle bundlemeet = intemeet.getExtras();
-        String mitup = bundlemeet.getString(MEETUP);
+        if (asado) {
+            asados.setText("Agregarlo al proximo Asado!!");
+        }
 
-        CheckBox asad = findViewById(R.id.asados_checkBox);
-        Intent intasa = getIntent();
-        Bundle bundlasa = intasa.getExtras();
-        String asado = bundlasa.getString(ASADOS);
+        if (torneo) {
+            torneos.setText("Nuevos Torneos");
+        }
 
-        textView.setText(torneo + mitup + asado);
 
     }
+
+    private void buscarVariables() {
+
+        nombre = findViewById(R.id.textView_nombre);
+        apellido = findViewById(R.id.textView_apellido);
+        edad = findViewById(R.id.textView_edad);
+        carrera = findViewById(R.id.textView_carrera);
+        email = findViewById(R.id.textView_email);
+        asados = findViewById(R.id.textView_asados);
+        mitup = findViewById(R.id.textView_meetup);
+        torneos = findViewById(R.id.textView_torneos);
+
+    }
+
 }

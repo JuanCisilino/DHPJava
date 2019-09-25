@@ -65,6 +65,7 @@
         android:text="edad obtenida"
         android:layout_below="@id/textView_nombre"
         android:gravity="center_horizontal"
+        android:inputType="number"
         android:layout_centerHorizontal="true"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -107,12 +108,32 @@
         />
 
     <TextView
-        android:id="@+id/textView_opcioneselegidas"
+        android:id="@+id/textView_torneos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="opciones elegidas"
+        android:text=""
         android:layout_centerHorizontal="true"
         android:layout_below="@id/textView_infodeseada"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/textView_meetup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textView_torneos"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/textView_asados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textView_meetup"
         android:textSize="20dp"
         android:textStyle="bold"
         />
