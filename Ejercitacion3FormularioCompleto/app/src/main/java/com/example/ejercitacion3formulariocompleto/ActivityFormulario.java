@@ -34,21 +34,18 @@ public class ActivityFormulario extends AppCompatActivity {
     private void pasarVariables(){
         String name = nombre.getText().toString();
         String apech = apellido.getText().toString();
-        Integer anos = Integer.parseInt(edad.getText().toString());
+
+        String edades = edad.getText().toString();
+        Integer anos = Integer.parseInt(edades);
+
         String carrche = carrera.getText().toString();
         String mail = email.getText().toString();
 
-        boolean torneosboolean = torneos.isChecked();
-        boolean meetupboolean = meetup.isChecked();
-        boolean asadosboolean = asados.isChecked();
+        Boolean torneosboolean = torneos.isChecked();
+        Boolean meetupboolean = meetup.isChecked();
+        Boolean asadosboolean = asados.isChecked();
 
         Intent intent = new Intent(ActivityFormulario.this, ActivityFinal.class);
-
-        intent.putExtra("nombre", name);
-        intent.putExtra("apellido", apech);
-        intent.putExtra("edad", anos);
-        intent.putExtra("carrera", carrche);
-        intent.putExtra("email", mail);
 
         Bundle bundle = new Bundle();
 
@@ -63,6 +60,7 @@ public class ActivityFormulario extends AppCompatActivity {
         bundle.putBoolean(ActivityFinal.MEETUP, meetupboolean);
         bundle.putBoolean(ActivityFinal.ASADOS, asadosboolean);
 
+        intent.putExtras(bundle);
 
         startActivity(intent);
 

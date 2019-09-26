@@ -46,7 +46,7 @@ public class ActivityFinal extends AppCompatActivity {
         apellido.setText(ape);
 
         Integer anios = bundle.getInt(EDAD);
-        edad.setText(anios.toString());
+        edad.setText(anios);
 
         String carre = bundle.getString(CARRERA);
         carrera.setText(carre);
@@ -59,15 +59,15 @@ public class ActivityFinal extends AppCompatActivity {
         Boolean torneo = bundle.getBoolean(TORNEOS);
 
         if (meetup) {
-            mitup.setText("Reuniones informativas o recreativas");
+            mitup.setText("Reuniones a realizarse proximamente");
         }
 
         if (asado) {
-            asados.setText("Agregarlo al proximo Asado!!");
+            asados.setText("Informacion referente al proximo Asado!!");
         }
 
         if (torneo) {
-            torneos.setText("Nuevos Torneos");
+            torneos.setText("Realizacion de Nuevos Torneos");
         }
 
 
