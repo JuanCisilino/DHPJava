@@ -13,7 +13,7 @@ public class ActivityFinal extends AppCompatActivity {
 
     public static final String NOMBRE = "Nombre";
     public static final String APELLIDO = "Apellido";
-    public static final String EDAD = "0" ;
+    public static final String EDAD = "Edad" ;
     public static final String CARRERA = "Carrera";
     public static final String EMAIL = "Email";
     public static final String TORNEOS = "Torneos";
@@ -21,7 +21,7 @@ public class ActivityFinal extends AppCompatActivity {
     public static final String ASADOS = "Asados";
 
 
-    private TextView nombre, apellido, edad, carrera, email, asados, mitup, torneos;
+    private TextView nombre, apellido, edades, carrera, email, asados, mitup, torneos;
 
 
 
@@ -46,7 +46,7 @@ public class ActivityFinal extends AppCompatActivity {
         apellido.setText(ape);
 
         Integer anios = bundle.getInt(EDAD);
-        edad.setText(anios);
+        edades.setText(anios);
 
         String carre = bundle.getString(CARRERA);
         carrera.setText(carre);
@@ -77,7 +77,7 @@ public class ActivityFinal extends AppCompatActivity {
 
         nombre = findViewById(R.id.textView_nombre);
         apellido = findViewById(R.id.textView_apellido);
-        edad = findViewById(R.id.textView_edad);
+        edades = findViewById(R.id.textView_edad);
         carrera = findViewById(R.id.textView_carrera);
         email = findViewById(R.id.textView_email);
         asados = findViewById(R.id.textView_asados);

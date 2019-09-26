@@ -32,14 +32,10 @@ public class ActivityFormulario extends AppCompatActivity {
     }
 
     private void pasarVariables(){
-        String name = nombre.getText().toString();
-        String apech = apellido.getText().toString();
 
         String edades = edad.getText().toString();
         Integer anos = Integer.parseInt(edades);
 
-        String carrche = carrera.getText().toString();
-        String mail = email.getText().toString();
 
         Boolean torneosboolean = torneos.isChecked();
         Boolean meetupboolean = meetup.isChecked();
@@ -49,11 +45,11 @@ public class ActivityFormulario extends AppCompatActivity {
 
         Bundle bundle = new Bundle();
 
-        bundle.putString(ActivityFinal.NOMBRE, name);
-        bundle.putString(ActivityFinal.APELLIDO, apech);
+        bundle.putString(ActivityFinal.NOMBRE, nombre.getText().toString());
+        bundle.putString(ActivityFinal.APELLIDO, apellido.getText().toString());
         bundle.putInt(ActivityFinal.EDAD, anos);
-        bundle.putString(ActivityFinal.CARRERA, carrche);
-        bundle.putString(ActivityFinal.EMAIL, mail);
+        bundle.putString(ActivityFinal.CARRERA, carrera.getText().toString());
+        bundle.putString(ActivityFinal.EMAIL, email.getText().toString());
 
 
         bundle.putBoolean(ActivityFinal.TORNEOS, torneosboolean);
