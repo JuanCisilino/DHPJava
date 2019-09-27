@@ -46,7 +46,7 @@ public class ActivityFinal extends AppCompatActivity {
         apellido.setText(ape);
 
         Integer anios = bundle.getInt(EDAD);
-        edades.setText(anios);
+        edades.setText(anios.toString());
 
         String carre = bundle.getString(CARRERA);
         carrera.setText(carre);
