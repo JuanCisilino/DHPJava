@@ -19,8 +19,9 @@
         android:textSize="30dp"
         android:textStyle="italic" />
 
+
     <Button
-        android:id="@+id/activitydos_boton_sumarHoras"
+        android:id="@+id/boton_sumarHoras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewTitulodos"
@@ -30,26 +31,28 @@
         android:textSize="30dp" />
 
     <TextView
-        android:id="@+id/mainActivity_textView_contadorHoras"
+        android:id="@+id/textView_contadorHoras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/activitydos_boton_sumarHoras"
+        android:layout_below="@id/boton_sumarHoras"
         android:layout_marginLeft="58dp"
         android:text="00"
         android:textSize="60dp" />
 
+
+
     <Button
-        android:id="@+id/mainActivity_boton_restarHoras"
+        android:id="@+id/boton_restarHoras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/mainActivity_textView_contadorHoras"
+        android:layout_below="@id/textView_contadorHoras"
         android:layout_marginLeft="50dp"
         android:text="-"
         android:textSize="30dp" />
 
 
     <Button
-        android:id="@+id/activitydos_boton_sumarMinutos"
+        android:id="@+id/boton_sumarMinutos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewTitulodos"
@@ -59,19 +62,19 @@
         android:textSize="30dp" />
 
     <TextView
-        android:id="@+id/activitydos_textView_contadorMinutos"
+        android:id="@+id/textView_contadorMinutos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/activitydos_boton_sumarMinutos"
+        android:layout_below="@id/boton_sumarMinutos"
         android:layout_marginLeft="160dp"
         android:text="00"
         android:textSize="60dp" />
 
     <Button
-        android:id="@+id/mainActivity_boton_restarMinutos"
+        android:id="@+id/boton_restarMinutos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/activitydos_textView_contadorMinutos"
+        android:layout_below="@id/textView_contadorMinutos"
         android:layout_marginLeft="150dp"
         android:text="-"
         android:textSize="30dp" />
@@ -84,6 +87,27 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp"
         />
+
+    <TextView
+        android:id="@+id/textView_Dispuntos"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/textView_contadorHoras"
+        android:text=":"
+        android:textSize="65dp" />
+
+    <ToggleButton
+        android:id="@+id/botonAMPM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/textView_contadorMinutos"
+        android:layout_marginLeft="30sp"
+        android:layout_marginTop="320dp"
+        android:text="ToggleButton"
+        android:textOff="AM"
+        android:textOn="PM" />
 
 
 </RelativeLayout>

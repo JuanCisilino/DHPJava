@@ -26,7 +26,6 @@ public class ActivityFinal extends AppCompatActivity {
 
 
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
