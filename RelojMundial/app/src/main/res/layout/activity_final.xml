@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityFinal">
+
+
+    <TextView
+        android:id="@+id/titulo_TextViewFinal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:textColor="#D2FDFBFB"
+        android:background="#000"
+        android:text="La hora actual en los siguiente paises son:" />
+
+    <ImageView
+        android:id="@+id/imagenFrancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo_TextViewFinal"
+        app:srcCompat="@drawable/francia" />
+
+    <ImageView
+        android:id="@+id/imagenChina"
+        android:layout_width="196dp"
+        android:layout_height="184dp"
+        android:layout_below="@+id/imagenFrancia"
+        app:srcCompat="@drawable/china" />
+
+    <ImageView
+        android:id="@+id/imagenSudafrica"
+        android:layout_width="196dp"
+        android:layout_height="196dp"
+        android:layout_below="@+id/imagenChina"
+        app:srcCompat="@drawable/sudafrica" />
+
+    <TextView
+        android:id="@+id/horaEnFrancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="20sp"
+        android:layout_toRightOf="@+id/imagenFrancia"
+        android:textSize="50dp"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/dospuntos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="145dp"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/horaEnFrancia"
+        android:textSize="50dp"
+        android:text=":" />
+
+    <TextView
+        android:id="@+id/minutosEnFrancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/dospuntos"
+        android:textSize="50dp"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/ampmEnFrancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="165dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/minutosEnFrancia"
+        android:textSize="30sp"
+        android:text="AM" />
+
+
+</RelativeLayout>

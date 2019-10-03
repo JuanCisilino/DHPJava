@@ -26,7 +26,6 @@ public class ActivityFinal extends AppCompatActivity {
 
 
 
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +45,7 @@ public class ActivityFinal extends AppCompatActivity {
         apellido.setText(ape);
 
         Integer anios = bundle.getInt(EDAD);
-        edades.setText(anios);
+        edades.setText(anios.toString());
 
         String carre = bundle.getString(CARRERA);
         carrera.setText(carre);
