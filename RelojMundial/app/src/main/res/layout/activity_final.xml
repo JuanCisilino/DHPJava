@@ -23,24 +23,11 @@
 
     <ImageView
         android:id="@+id/imagenFrancia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="180dp"
+        android:layout_height="172dp"
         android:layout_below="@+id/titulo_TextViewFinal"
         app:srcCompat="@drawable/francia" />
 
-    <ImageView
-        android:id="@+id/imagenChina"
-        android:layout_width="196dp"
-        android:layout_height="184dp"
-        android:layout_below="@+id/imagenFrancia"
-        app:srcCompat="@drawable/china" />
-
-    <ImageView
-        android:id="@+id/imagenSudafrica"
-        android:layout_width="196dp"
-        android:layout_height="196dp"
-        android:layout_below="@+id/imagenChina"
-        app:srcCompat="@drawable/sudafrica" />
 
     <TextView
         android:id="@+id/horaEnFrancia"
@@ -52,7 +39,8 @@
         android:textSize="50dp"
         android:text="00" />
 
-    <TextView
+
+         <TextView
         android:id="@+id/dospuntos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,7 +50,7 @@
         android:textSize="50dp"
         android:text=":" />
 
-    <TextView
+         <TextView
         android:id="@+id/minutosEnFrancia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,13 +60,110 @@
         android:textSize="50dp"
         android:text="00" />
 
-    <TextView
+        <TextView
         android:id="@+id/ampmEnFrancia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="165dp"
         android:layout_marginLeft="5dp"
         android:layout_toRightOf="@+id/minutosEnFrancia"
+        android:textSize="30sp"
+        android:text="AM" />
+
+
+    <ImageView
+        android:id="@+id/imagenChina"
+        android:layout_width="180dp"
+        android:layout_height="172dp"
+        android:layout_below="@+id/imagenFrancia"
+        app:srcCompat="@drawable/china" />
+
+    <TextView
+        android:id="@+id/horaEnChina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="20sp"
+        android:layout_toRightOf="@+id/imagenChina"
+        android:textSize="50dp"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/dospuntoschina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="315dp"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/horaEnChina"
+        android:textSize="50dp"
+        android:text=":" />
+
+    <TextView
+        android:id="@+id/minutosEnChina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/dospuntoschina"
+        android:textSize="50dp"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/ampmEnChina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="335dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/minutosEnChina"
+        android:textSize="30sp"
+        android:text="AM" />
+
+
+
+    <ImageView
+        android:id="@+id/imagenSudafrica"
+        android:layout_width="180dp"
+        android:layout_height="172dp"
+        android:layout_below="@+id/imagenChina"
+        app:srcCompat="@drawable/sudafrica" />
+
+    <TextView
+        android:id="@+id/horaEnSuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="20sp"
+        android:layout_toRightOf="@+id/imagenSudafrica"
+        android:textSize="50dp"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/dospuntosSuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="515dp"
+        android:layout_marginLeft="1dp"
+        android:layout_toRightOf="@+id/horaEnSuda"
+        android:textSize="50dp"
+        android:text=":" />
+
+    <TextView
+        android:id="@+id/minutosEnSuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/dospuntosSuda"
+        android:textSize="50dp"
+        android:text="00" />
+
+    <TextView
+        android:id="@+id/ampmEnSuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="535dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/minutosEnSuda"
         android:textSize="30sp"
         android:text="AM" />
 
