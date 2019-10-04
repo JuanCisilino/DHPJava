@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity1">
+
+    <TextView
+        android:id="@+id/textviewfragmentuno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:gravity="center"
+        android:text="My App"
+        android:textSize="40dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/usernameFragment1"
+        android:layout_below="@id/textviewfragmentuno"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:hint="Username"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/passFragment1"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/usernameFragment1"
+        android:inputType="textPassword"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:hint="Password"
+        android:textSize="25dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passFragment1"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:id="@+id/loginFragment1"
+        android:text="Login"/>
+
+
+
+</RelativeLayout>
