@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +33,6 @@ public class ListaDeArticulos extends Fragment {
     private Button botonAgregar;
 
 
-
     private NotificadorActivity listener;
 
     @Override
@@ -45,14 +45,13 @@ public class ListaDeArticulos extends Fragment {
 
         recyclerViewArticulos = vistaDelFragment.findViewById(R.id.fragment_listadearticulos_recyclerView);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
 
         ArticuloAdapter adapter = new ArticuloAdapter(generarLista());
 
         recyclerViewArticulos.setAdapter(adapter);
 
         recyclerViewArticulos.setLayoutManager(linearLayoutManager);
-
 
 
         botonAgregar = vistaDelFragment.findViewById(R.id.botonAgregarArticulo);
@@ -70,11 +69,8 @@ public class ListaDeArticulos extends Fragment {
         });
 
 
-
-
         return vistaDelFragment;
     }
-
 
 
     @Override
@@ -83,16 +79,17 @@ public class ListaDeArticulos extends Fragment {
         this.listener = (NotificadorActivity) context;
     }
 
-    public interface NotificadorActivity{
+    public interface NotificadorActivity {
 
         public void recibirMensaje(Articulo articulo);
 
     }
+
     public ListaDeArticulos() {
         // Required empty public constructor
     }
 
-    private List<Articulo> generarLista(){
+    private List<Articulo> generarLista() {
 
         List<Articulo> listaDeArticulos = new ArrayList<>();
 
@@ -158,11 +155,12 @@ public class ListaDeArticulos extends Fragment {
 
         Bundle bundle = getArguments();
 
-        Articulo articulo = (Articulo) bundle.getSerializable(CLAVE_ARTICULO);
+      /* Articulo articulo = (Articulo) bundle.getSerializable(CLAVE_ARTICULO);
 
-        listaDeArticulos.add( new Articulo(articulo.getNombreDeArticulo(),articulo.getPrecioDeArticulo(),
-                articulo.getDescripcionDeArticulo(),R.drawable.ic_launcher_foreground));
+        listaDeArticulos.add(new Articulo(articulo.getNombreDeArticulo(), articulo.getPrecioDeArticulo(),
+                articulo.getDescripcionDeArticulo(), R.drawable.ic_launcher_foreground));*/
 
         return listaDeArticulos;
     }
+
 }

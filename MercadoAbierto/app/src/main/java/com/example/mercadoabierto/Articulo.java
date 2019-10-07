@@ -1,6 +1,8 @@
 package com.example.mercadoabierto;
 
-public class Articulo {
+import java.io.Serializable;
+
+public class Articulo implements Serializable {
 
     private String nombreDeArticulo, descripcionDeArticulo, precioDeArticulo;
     private int imagenDeArticulo;

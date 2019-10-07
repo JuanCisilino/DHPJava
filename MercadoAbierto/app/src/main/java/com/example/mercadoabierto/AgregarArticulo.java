@@ -63,9 +63,7 @@ public class AgregarArticulo extends Fragment {
         this.listener = (ListaDeArticulos.NotificadorActivity) context;
     }
 
-    public interface NotificadorActivity{
 
-        public void recibirMensaje(Articulo articulo);
-    }
+
 }
 
