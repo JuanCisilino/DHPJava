@@ -100,12 +100,14 @@ public class Activity2 extends AppCompatActivity {
                 String horaFinal = horas.getText().toString();
                 Integer horaEnNumero = Integer.parseInt(horaFinal);
 
+                Boolean PM = ampm.isChecked();
 
                 Intent intent = new Intent(Activity2.this, ActivityFinal.class);
                 Bundle bundle = new Bundle();
 
                 bundle.putInt(ActivityFinal.horasContadas, horaEnNumero);
                 bundle.putInt(ActivityFinal.minutosContados, contadorMinutos);
+                bundle.putBoolean(ActivityFinal.PM, PM);
 
                 intent.putExtras(bundle);
 
