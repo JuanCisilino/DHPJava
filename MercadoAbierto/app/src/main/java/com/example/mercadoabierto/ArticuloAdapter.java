@@ -45,7 +45,7 @@ public class ArticuloAdapter extends RecyclerView.Adapter<ArticuloAdapter.ViewHo
         return listaDeArticulos.size();
     }
 
-    public class ViewHolderArticulo extends RecyclerView.ViewHolder{
+    public class ViewHolderArticulo    extends RecyclerView.ViewHolder{
 
         private TextView textViewNombreArticulo, textViewPrecio, textViewDescripcion;
         private ImageView imagenDeArticulo;

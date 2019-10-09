@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        tools:text="Titulo"
+    android:textSize="30sp"
+        android:gravity="center"
+    android:id="@+id/celda_pelicula_titulo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    />
+
+    <TextView
+        tools:text="Director"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:id="@+id/celda_pelicula_director"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        tools:text="Fecha de Estreno"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:id="@+id/celda_pelicula_fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+</LinearLayout>
