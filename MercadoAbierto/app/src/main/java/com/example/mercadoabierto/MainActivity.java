@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements ListaDeArticulos.
 
     @Override
     public void recibirMensaje(Articulo articulo) {
-        Intent intent = new Intent(getBaseContext(),AgregarArticulo.class);
+        Intent intent = new Intent(MainActivity.this,AgregarArticulo.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable(ListaDeArticulos.CLAVE_ARTICULO, articulo);
         intent.putExtras(bundle);

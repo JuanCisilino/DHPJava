@@ -31,7 +31,9 @@ public class ListaDeArticulos extends Fragment {
 
     private RecyclerView recyclerViewArticulos;
 
+    Bundle bundle = getArguments();
 
+    Articulo articulo = (Articulo) bundle.getSerializable(CLAVE_ARTICULO);
 
     private NotificadorActivity listener;
 
@@ -53,12 +55,8 @@ public class ListaDeArticulos extends Fragment {
 
         recyclerViewArticulos.setLayoutManager(linearLayoutManager);
 
-        /*Bundle bundle = getArguments();
 
-        Articulo articulo = (Articulo) bundle.getSerializable(CLAVE_ARTICULO);
 
-        listaDeArticulos.add(new Articulo(articulo.getNombreDeArticulo(), articulo.getPrecioDeArticulo(),
-                articulo.getDescripcionDeArticulo(), R.drawable.ic_launcher_foreground));*/
 
         return vistaDelFragment;
     }
@@ -144,6 +142,8 @@ public class ListaDeArticulos extends Fragment {
                         "Ideal para el bolsillo de la dama y el morral del caballero.",
                         R.drawable.ic_launcher_background));
 
+        listaDeArticulos.add(new Articulo(articulo.getNombreDeArticulo(), articulo.getPrecioDeArticulo(),
+                articulo.getDescripcionDeArticulo(), R.drawable.ic_launcher_foreground));
 
         return listaDeArticulos;
     }
