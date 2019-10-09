@@ -38,8 +38,8 @@ public class AgregarArticulo extends Fragment {
 
         nombreArticulo = view.findViewById(R.id.fragment_AgregarArticulo_editText_nombre_articulo);
         precio = view.findViewById(R.id.fragment_AgregarArticulo_editText_precio_articulo);
-        descripcion = view.findViewById(R.id.fragment_AgregarArticulo_textView_descripcion_articulo);
-        botonAgregar = view.findViewById(R.id.botonAgregarArticulo);
+        descripcion = view.findViewById(R.id.fragment_AgregarArticulo_editText_descripcion_articulo);
+        botonAgregar = view.findViewById(R.id.fragment_AgregarArticulo_botonAgregar);
 
         botonAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
