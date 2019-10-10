@@ -30,6 +30,7 @@ public class ArticuloAdapter extends RecyclerView.Adapter<ArticuloAdapter.ViewHo
 
         ViewHolderArticulo viewHolderArticulo = new ViewHolderArticulo(vistaDeLaCelda);
 
+
         return viewHolderArticulo;
     }
 
@@ -38,6 +39,7 @@ public class ArticuloAdapter extends RecyclerView.Adapter<ArticuloAdapter.ViewHo
 
         Articulo articuloAMostrar = listaDeArticulos.get(position);
         holder.cargarArticulo(articuloAMostrar);
+
     }
 
     @Override
@@ -69,5 +71,12 @@ public class ArticuloAdapter extends RecyclerView.Adapter<ArticuloAdapter.ViewHo
             textViewPrecio.setText(articulo.getPrecioDeArticulo());
             textViewDescripcion.setText(articulo.getDescripcionDeArticulo());
         }
+
+        public void agregarArticulo(Articulo articulo){
+            listaDeArticulos.add(new Articulo(articulo.getNombreDeArticulo(), articulo.getPrecioDeArticulo(),
+                    articulo.getDescripcionDeArticulo(), R.drawable.ic_launcher_foreground));
+        }
     }
+
+
 }

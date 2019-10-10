@@ -28,10 +28,7 @@ public class ListaDeArticulos extends Fragment {
 
     public static final String CLAVE_ARTICULO = "claveArticulo";
 
-
     private RecyclerView recyclerViewArticulos;
-    private Button botonAgregar;
-
 
     private NotificadorActivity listener;
 
@@ -39,6 +36,11 @@ public class ListaDeArticulos extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        Bundle bundle = getArguments();
+
+        if (bundle != null) {
+            Articulo articulo = (Articulo) bundle.getSerializable(CLAVE_ARTICULO);
+        }
 
         // Inflate the layout for this fragment
         View vistaDelFragment = inflater.inflate(R.layout.fragment_lista_de_articulos, container, false);
@@ -49,24 +51,14 @@ public class ListaDeArticulos extends Fragment {
 
         ArticuloAdapter adapter = new ArticuloAdapter(generarLista());
 
+        adapter.notifyDataSetChanged();
+
         recyclerViewArticulos.setAdapter(adapter);
 
         recyclerViewArticulos.setLayoutManager(linearLayoutManager);
 
 
-        botonAgregar = vistaDelFragment.findViewById(R.id.botonAgregarArticulo);
 
-
-        botonAgregar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(getContext(), AgregarArticulo.class);
-
-                startActivity(intent);
-
-            }
-        });
 
 
         return vistaDelFragment;
@@ -153,12 +145,6 @@ public class ListaDeArticulos extends Fragment {
                         "Ideal para el bolsillo de la dama y el morral del caballero.",
                         R.drawable.ic_launcher_background));
 
-        Bundle bundle = getArguments();
-
-      /* Articulo articulo = (Articulo) bundle.getSerializable(CLAVE_ARTICULO);
-
-        listaDeArticulos.add(new Articulo(articulo.getNombreDeArticulo(), articulo.getPrecioDeArticulo(),
-                articulo.getDescripcionDeArticulo(), R.drawable.ic_launcher_foreground));*/
 
         return listaDeArticulos;
     }

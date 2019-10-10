@@ -49,8 +49,8 @@
         android:hint="Precio"
         android:textSize="25dp" />
 
-    <TextView
-        android:id="@+id/fragment_AgregarArticulo_textView_descripcion_articulo"
+    <EditText
+        android:id="@+id/fragment_AgregarArticulo_editText_descripcion_articulo"
         android:layout_width="412dp"
         android:layout_height="46dp"
         android:layout_below="@+id/fragment_AgregarArticulo_imagen_celda_articulo"
@@ -64,8 +64,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Agregar a la Lista"
-        android:layout_below="@+id/fragment_AgregarArticulo_textView_descripcion_articulo"
-        />
+        android:layout_below="@+id/fragment_AgregarArticulo_editText_descripcion_articulo"
+                />
 
 
 </RelativeLayout>
