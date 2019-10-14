@@ -1,6 +1,7 @@
 package com.example.nuevomercadoabierto.view;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,20 +14,21 @@ import android.widget.EditText;
 
 import com.example.nuevomercadoabierto.R;
 import com.example.nuevomercadoabierto.model.Articulo;
+import com.example.nuevomercadoabierto.model.ArticulosDAO;
 
 import java.io.Serializable;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentAgregarArticulo extends Fragment implements Serializable {
+public class FragmentAgregarArticulo extends Fragment implements FragmentListaDeArticulos.ListenerDeFragment {
 
 
     private EditText nombreArticulo, precio, descripcion;
+    private FragmentListaDeArticulos.ListenerDeFragment listener;
     private Button botonAgregar;
-    private ListenerDeFragment listener;
 
-    public FragmentAgregarArticulo(ListenerDeFragment listener) {
+    public FragmentAgregarArticulo(FragmentListaDeArticulos.ListenerDeFragment listener) {
         // Required empty public constructor
         this.listener = listener;
     }
@@ -55,7 +57,21 @@ public class FragmentAgregarArticulo extends Fragment implements Serializable {
                 String description = descripcion.getText().toString();
 
                 Articulo articulo = new Articulo(nombre,costo,description,R.drawable.ic_launcher_foreground);
-                listener.agregarArticuloALista(articulo);
+
+                Intent intent = new Intent(getContext(), ArticulosDAO.class);
+                Bundle bundle = new Bundle();
+
+                bundle.putSerializable(ArticulosDAO.NOMBRE, nombre);
+                bundle.putSerializable(ArticulosDAO.PRECIO, costo);
+                bundle.putSerializable(ArticulosDAO.DESCRIPCION, description);
+
+                intent.putExtras(bundle);
+
+
+
+                listener.volverAlFragmentLista();
+
+
             }
         });
 
@@ -63,8 +79,26 @@ public class FragmentAgregarArticulo extends Fragment implements Serializable {
         return view;
     }
 
-    public interface ListenerDeFragment{
-        public void agregarArticuloALista(Articulo articulo);
+
+    @Override
+    public void recibirArticulo(Articulo articulo) {
+
     }
+
+    @Override
+    public void recibirBoton() {
+
+    }
+
+    @Override
+    public void agregarALista(Articulo articulo) {
+
+    }
+
+    @Override
+    public void volverAlFragmentLista() {
+
+    }
+
 
 }

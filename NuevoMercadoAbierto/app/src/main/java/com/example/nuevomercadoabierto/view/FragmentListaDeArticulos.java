@@ -92,6 +92,8 @@ public class FragmentListaDeArticulos extends Fragment implements AdapterArticul
     public interface ListenerDeFragment {
         public void recibirArticulo(Articulo articulo);
         public void recibirBoton();
+        public void agregarALista(Articulo articulo);
+        public void volverAlFragmentLista();
 
     }
 }

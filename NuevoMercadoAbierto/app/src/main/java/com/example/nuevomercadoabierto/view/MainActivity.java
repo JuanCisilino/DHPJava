@@ -43,5 +43,15 @@ public class MainActivity extends AppCompatActivity implements FragmentListaDeAr
         pegarFragment(new FragmentAgregarArticulo());
     }
 
+    @Override
+    public void agregarALista(Articulo articulo) {
+
+    }
+
+    @Override
+    public void volverAlFragmentLista() {
+        pegarFragment(new FragmentListaDeArticulos());
+    }
+
 
 }

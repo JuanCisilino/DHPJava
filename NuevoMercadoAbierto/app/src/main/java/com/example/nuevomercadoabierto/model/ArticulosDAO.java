@@ -1,17 +1,21 @@
 package com.example.nuevomercadoabierto.model;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.nuevomercadoabierto.ListenerArticulo;
 import com.example.nuevomercadoabierto.R;
 import com.example.nuevomercadoabierto.view.AdapterArticulo;
 import com.example.nuevomercadoabierto.view.FragmentAgregarArticulo;
+import com.example.nuevomercadoabierto.view.FragmentListaDeArticulos;
 
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticulosDAO implements FragmentAgregarArticulo.ListenerDeFragment {
+public class ArticulosDAO implements FragmentListaDeArticulos.ListenerDeFragment {
 
+    public static final String NOMBRE = "Nombre", PRECIO = "Precio", DESCRIPCION = "Descripcion";
 
     List<Articulo> articuloList = new ArrayList<>();
 
@@ -85,7 +89,35 @@ public class ArticulosDAO implements FragmentAgregarArticulo.ListenerDeFragment 
 
 
     @Override
-    public void agregarArticuloALista(Articulo articulo) {
-        articuloList.add(articulo);
+    public void recibirArticulo(Articulo articulo) {
+
+    }
+
+    @Override
+    public void recibirBoton() {
+
+    }
+
+    @Override
+    public void agregarALista(Articulo articulo) {
+
+        Intent intent = null;
+        try {
+            intent = Intent.getIntentOld(null);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        Bundle bundle = intent.getExtras();
+
+        String nombre = bundle.getString(NOMBRE);
+        String precio = bundle.getString(PRECIO);
+        String descripcion = bundle.getString(DESCRIPCION);
+
+        articuloList.add(new Articulo( nombre , precio , descripcion , R.drawable.ic_launcher_foreground));
+    }
+
+    @Override
+    public void volverAlFragmentLista() {
+
     }
 }
