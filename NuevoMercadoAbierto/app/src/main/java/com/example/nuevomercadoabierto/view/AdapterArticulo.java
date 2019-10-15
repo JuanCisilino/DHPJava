@@ -54,6 +54,11 @@ public class AdapterArticulo extends RecyclerView.Adapter<AdapterArticulo.ViewHo
         notifyDataSetChanged();
     }
 
+    public void agregarArticulo(Articulo articulo){
+        articuloList.add(articulo);
+        notifyDataSetChanged();
+    }
+
     public class ViewHolderArticulos extends RecyclerView.ViewHolder{
 
         private TextView textViewNombreArticulo, textViewPrecio;

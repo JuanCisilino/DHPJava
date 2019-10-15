@@ -13,7 +13,7 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticulosDAO implements FragmentListaDeArticulos.ListenerDeFragment {
+public class ArticulosDAO  {
 
     public static final String NOMBRE = "Nombre", PRECIO = "Precio", DESCRIPCION = "Descripcion";
 
@@ -88,36 +88,4 @@ public class ArticulosDAO implements FragmentListaDeArticulos.ListenerDeFragment
     }
 
 
-    @Override
-    public void recibirArticulo(Articulo articulo) {
-
-    }
-
-    @Override
-    public void recibirBoton() {
-
-    }
-
-    @Override
-    public void agregarALista(Articulo articulo) {
-
-        Intent intent = null;
-        try {
-            intent = Intent.getIntentOld(null);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-        Bundle bundle = intent.getExtras();
-
-        String nombre = bundle.getString(NOMBRE);
-        String precio = bundle.getString(PRECIO);
-        String descripcion = bundle.getString(DESCRIPCION);
-
-        articuloList.add(new Articulo( nombre , precio , descripcion , R.drawable.ic_launcher_foreground));
-    }
-
-    @Override
-    public void volverAlFragmentLista() {
-
-    }
 }

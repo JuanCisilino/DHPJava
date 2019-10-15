@@ -1,9 +1,11 @@
 package com.example.nuevomercadoabierto.view;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -21,17 +23,13 @@ import java.io.Serializable;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentAgregarArticulo extends Fragment implements FragmentListaDeArticulos.ListenerDeFragment {
+public class FragmentAgregarArticulo extends Fragment {
 
 
     private EditText nombreArticulo, precio, descripcion;
-    private FragmentListaDeArticulos.ListenerDeFragment listener;
     private Button botonAgregar;
+    private ListerDeAgregarArticulo listerDeAgregarArticulo;
 
-    public FragmentAgregarArticulo(FragmentListaDeArticulos.ListenerDeFragment listener) {
-        // Required empty public constructor
-        this.listener = listener;
-    }
 
     public FragmentAgregarArticulo() {
 
@@ -58,18 +56,11 @@ public class FragmentAgregarArticulo extends Fragment implements FragmentListaDe
 
                 Articulo articulo = new Articulo(nombre,costo,description,R.drawable.ic_launcher_foreground);
 
-                Intent intent = new Intent(getContext(), ArticulosDAO.class);
-                Bundle bundle = new Bundle();
-
-                bundle.putSerializable(ArticulosDAO.NOMBRE, nombre);
-                bundle.putSerializable(ArticulosDAO.PRECIO, costo);
-                bundle.putSerializable(ArticulosDAO.DESCRIPCION, description);
-
-                intent.putExtras(bundle);
+                listerDeAgregarArticulo.agregararticulo(articulo);
 
 
 
-                listener.volverAlFragmentLista();
+
 
 
             }
@@ -79,26 +70,17 @@ public class FragmentAgregarArticulo extends Fragment implements FragmentListaDe
         return view;
     }
 
-
     @Override
-    public void recibirArticulo(Articulo articulo) {
-
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        listerDeAgregarArticulo = (ListerDeAgregarArticulo) context;
     }
 
-    @Override
-    public void recibirBoton() {
-
+    public interface ListerDeAgregarArticulo{
+        public void agregararticulo(Articulo articulo);
     }
 
-    @Override
-    public void agregarALista(Articulo articulo) {
 
-    }
-
-    @Override
-    public void volverAlFragmentLista() {
-
-    }
 
 
 }

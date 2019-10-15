@@ -33,6 +33,8 @@ public class FragmentListaDeArticulos extends Fragment implements AdapterArticul
     private RecyclerView recyclerView;
     private ListenerDeFragment listenerDeFragment;
 
+    AdapterArticulo adapterArticulo;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,12 +47,13 @@ public class FragmentListaDeArticulos extends Fragment implements AdapterArticul
 
         //crear el adapter
 
-        final AdapterArticulo adapterArticulo = new AdapterArticulo(this);
+        adapterArticulo = new AdapterArticulo(this);
         ControllerArticulos controllerArticulos = new ControllerArticulos();
 
         controllerArticulos.traerArticulos(new ListenerArticulo<List<Articulo>>() {
             @Override
             public void finish(List<Articulo> result) {
+
                 adapterArticulo.setArticuloList(result);
             }
         });
@@ -83,6 +86,10 @@ public class FragmentListaDeArticulos extends Fragment implements AdapterArticul
         listenerDeFragment = (ListenerDeFragment) context;
     }
 
+    public void agregarArticuo(Articulo articulo){
+        adapterArticulo.agregarArticulo(articulo);
+    }
+
     @Override
     public void informarArticuloSeleccionado(Articulo articulo) {
         listenerDeFragment.recibirArticulo(articulo);
@@ -92,8 +99,7 @@ public class FragmentListaDeArticulos extends Fragment implements AdapterArticul
     public interface ListenerDeFragment {
         public void recibirArticulo(Articulo articulo);
         public void recibirBoton();
-        public void agregarALista(Articulo articulo);
-        public void volverAlFragmentLista();
+
 
     }
 }

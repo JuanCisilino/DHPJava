@@ -9,23 +9,28 @@ import android.widget.Toast;
 import com.example.nuevomercadoabierto.R;
 import com.example.nuevomercadoabierto.model.Articulo;
 
-public class MainActivity extends AppCompatActivity implements FragmentListaDeArticulos.ListenerDeFragment {
+public class MainActivity extends AppCompatActivity implements FragmentListaDeArticulos.ListenerDeFragment, FragmentAgregarArticulo.ListerDeAgregarArticulo {
 
+
+    private FragmentListaDeArticulos fragmentListaDeArticulos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        pegarFragment(new FragmentListaDeArticulos());
+        fragmentListaDeArticulos = new FragmentListaDeArticulos();
+        pegarFragment(fragmentListaDeArticulos);
     }
 
 
     private void pegarFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.mainActivity_container, fragment)
+                .add(R.id.mainActivity_container, fragment)
                 .addToBackStack(null)
                 .commit();
     }
+
+
 
     @Override
     public void recibirArticulo(Articulo articulo) {
@@ -41,17 +46,13 @@ public class MainActivity extends AppCompatActivity implements FragmentListaDeAr
     @Override
     public void recibirBoton() {
         pegarFragment(new FragmentAgregarArticulo());
+
     }
+
 
     @Override
-    public void agregarALista(Articulo articulo) {
-
+    public void agregararticulo(Articulo articulo) {
+        fragmentListaDeArticulos.agregarArticuo(articulo);
+        onBackPressed();
     }
-
-    @Override
-    public void volverAlFragmentLista() {
-        pegarFragment(new FragmentListaDeArticulos());
-    }
-
-
 }
