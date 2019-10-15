@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".AgregarArticulo">
+    tools:context=".AgregarArticuloFragment">
 
     <ImageView
         android:id="@+id/fragment_AgregarArticulo_imagen_celda_articulo"

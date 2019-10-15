@@ -9,14 +9,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ArticuloAdapter extends RecyclerView.Adapter<ArticuloAdapter.ViewHolderArticulo> {
 
+    private ListenerDelAdapter listenerDelAdapter;
     private List<Articulo> listaDeArticulos;
 
     public ArticuloAdapter(List<Articulo> listaDeArticulos) {
         this.listaDeArticulos = listaDeArticulos;
+    }
+
+    public ArticuloAdapter(ListenerDelAdapter listenerDelAdapter){
+        listaDeArticulos = new ArrayList<>();
+        this.listenerDelAdapter = listenerDelAdapter;
+    }
+
+    public void agregarArticulo(Articulo articulo){
+        listaDeArticulos.add(articulo);
+        notifyDataSetChanged();
     }
 
 
@@ -72,10 +84,10 @@ public class ArticuloAdapter extends RecyclerView.Adapter<ArticuloAdapter.ViewHo
             textViewDescripcion.setText(articulo.getDescripcionDeArticulo());
         }
 
-        public void agregarArticulo(Articulo articulo){
-            listaDeArticulos.add(new Articulo(articulo.getNombreDeArticulo(), articulo.getPrecioDeArticulo(),
-                    articulo.getDescripcionDeArticulo(), R.drawable.ic_launcher_foreground));
-        }
+    }
+
+    public interface ListenerDelAdapter {
+        public void informarArticulo(Articulo articulo);
     }
 
 

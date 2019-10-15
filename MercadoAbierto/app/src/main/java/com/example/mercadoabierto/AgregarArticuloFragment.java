@@ -17,15 +17,15 @@ import android.widget.EditText;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AgregarArticulo extends Fragment {
+public class AgregarArticuloFragment extends Fragment {
 
     private EditText nombreArticulo, precio, descripcion;
     private Button botonAgregar;
 
-    private ListaDeArticulos.NotificadorActivity listener;
+    private ListaDeArticulosFragment.NotificadorActivity listener;
 
 
-    public AgregarArticulo() {
+    public AgregarArticuloFragment() {
         // Required empty public constructor
     }
 
@@ -60,10 +60,12 @@ public class AgregarArticulo extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        this.listener = (ListaDeArticulos.NotificadorActivity) context;
+        this.listener = (ListaDeArticulosFragment.NotificadorActivity) context;
     }
 
-
+ public interface NotificadorDeNuevoArticulo {
+        public void seAgregoArticulo(Articulo articulo);
+ }
 
 }
 
