@@ -22,7 +22,7 @@ public class FragmentDetalleArticuloOferta extends Fragment {
 
     public static final String CLAVE_ARTICULO_OFERTA = "claveArticuloOferta";
 
-    private TextView textViewNombreArticulo, textViewPrecio, textViewDescripcion;
+    private TextView textViewNombreArticulo, textViewPrecio;
 
     private ImageView imageViewImagenArticuloOferta;
 
@@ -45,7 +45,6 @@ public class FragmentDetalleArticuloOferta extends Fragment {
 
         textViewNombreArticulo = view.findViewById(R.id.fragment_ArticuloOferta_Titulo);
         textViewPrecio = view.findViewById(R.id.fragment_ArticuloOferta_Precio);
-        textViewDescripcion = view.findViewById(R.id.fragment_ArticuloOferta_Descripcion);
         imageViewImagenArticuloOferta = view.findViewById(R.id.fragment_imagenArticuloOferta);
 
         Bundle bundle = getArguments();
@@ -55,7 +54,11 @@ public class FragmentDetalleArticuloOferta extends Fragment {
         textViewNombreArticulo.setText(articulo.getNombreDeArticulo());
         textViewPrecio.setText(articulo.getPrecioDeArticulo());
 
-        Glide.with(getContext()).load(articulo.getImagenDeArticulo()).placeholder(R.drawable.ic_launcher_foreground).into(imageViewImagenArticuloOferta);
+        Glide.with(getContext())
+                .load(articulo.getImagenurl())
+                .placeholder(R.drawable.loading)
+                .error(R.drawable.error)
+                .into(imageViewImagenArticuloOferta);
 
         return view;
     }
