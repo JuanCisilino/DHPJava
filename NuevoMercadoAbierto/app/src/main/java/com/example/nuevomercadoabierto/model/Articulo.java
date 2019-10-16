@@ -8,12 +8,23 @@ public class Articulo implements Serializable {
     private String descripcionDeArticulo;
     private String precioDeArticulo;
     private int imagenDeArticulo;
+    private String imagenurl;
+
 
     public Articulo(String nombreDeArticulo, String precioDeArticulo , String descripcionDeArticulo, int imagenDeArticulo) {
         this.imagenDeArticulo = imagenDeArticulo;
         this.nombreDeArticulo = nombreDeArticulo;
         this.descripcionDeArticulo = descripcionDeArticulo;
         this.precioDeArticulo = precioDeArticulo;
+        this.imagenurl = imagenurl;
+    }
+
+    public Articulo(String nombreDeArticulo, String precioDeArticulo , String descripcionDeArticulo, String imagenurl) {
+        this.imagenDeArticulo = imagenDeArticulo;
+        this.nombreDeArticulo = nombreDeArticulo;
+        this.descripcionDeArticulo = descripcionDeArticulo;
+        this.precioDeArticulo = precioDeArticulo;
+        this.imagenurl = imagenurl;
     }
 
     public int getImagenDeArticulo() {
@@ -32,5 +43,8 @@ public class Articulo implements Serializable {
         return precioDeArticulo;
     }
 
+    public String getImagenurl() {
+        return imagenurl;
+    }
 
 }
