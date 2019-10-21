@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:title="Drama"
+        android:id="@+id/genero_drama"/>
+
+    <item
+        android:title="Aventura"
+        android:id="@+id/genero_Aventura"/>
+
+    <item
+        android:id="@+id/genero_Accion"
+        android:title="Accion" />
+
+    <item
+        android:id="@+id/genero_animacion"
+        android:title="Animacion" />
+
+    <item
+        android:title="Comedia"
+        android:id="@+id/genero_Comedia"/>
+
+    <item
+        android:id="@+id/genero_Crimen"
+        android:title="Crimen" />
+
+    <item
+        android:id="@+id/genero_documental"
+        android:title="Documental" />
+
+    <item
+        android:title="Familia"
+        android:id="@+id/genero_familia"/>
+
+    <item
+        android:id="@+id/genero_fantasia"
+        android:title="Fantasia" />
+
+    <item
+        android:id="@+id/genero_historia"
+        android:title="Historia" />
+
+    <item
+        android:title="Terror"
+        android:id="@+id/genero_Terror"/>
+
+    <item
+        android:id="@+id/genero_Musica"
+        android:title="Musica" />
+
+    <item
+        android:id="@+id/genero_misterio"
+        android:title="Misterio" />
+
+    <item
+        android:title="Romance"
+        android:id="@+id/genero_Romance"/>
+
+    <item
+        android:id="@+id/genero_Ciencia_Ficcion"
+        android:title="Ciencia Ficcion" />
+
+    <item
+        android:id="@+id/genero_Peli_de_TV"
+        android:title="Peli de TV" />
+
+    <item
+        android:title="Thriller"
+        android:id="@+id/genero_Thriller"/>
+
+    <item
+        android:id="@+id/genero_Western"
+        android:title="Western" />
+
+    <item
+        android:id="@+id/genero_belica"
+        android:title="Belica" />
+
+
+</menu>

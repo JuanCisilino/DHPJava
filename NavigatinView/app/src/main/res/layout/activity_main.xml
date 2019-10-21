@@ -8,6 +8,15 @@
     tools:context=".MainActivity"
     android:id="@+id/drawerLayout">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_mainActivity"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 
     <FrameLayout
         android:id="@+id/contenedor_Fragment"
@@ -25,5 +34,6 @@
         android:layout_height="match_parent">
 
     </com.google.android.material.navigation.NavigationView>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
