@@ -13,6 +13,7 @@ import retrofit2.Response;
 public class PeliculaDAO extends PeliculaRetrofitDAO{
 
     private static final String BASE_URL = "https://api.themoviedb.org";
+    public static final String API_KEY = "41c70e6b99d8ae34c17c9c34fd81e344";
 
     public PeliculaDAO() {
         super(BASE_URL);
@@ -20,7 +21,7 @@ public class PeliculaDAO extends PeliculaRetrofitDAO{
 
     public void traerPeliculas(final ListenerPelicula<List<Pelicula>> listenerDelControler){
 
-        Call<ContainerPelicula> call = peliculasService.traerPelicula();
+        Call<ContainerPelicula> call = peliculasService.traerPelicula(API_KEY);
 
         call.enqueue(new Callback<ContainerPelicula>() {
             @Override

@@ -9,10 +9,10 @@
 
     <item
         android:title="Aventura"
-        android:id="@+id/genero_Aventura"/>
+        android:id="@+id/genero_aventura"/>
 
     <item
-        android:id="@+id/genero_Accion"
+        android:id="@+id/genero_accion"
         android:title="Accion" />
 
     <item
@@ -21,10 +21,10 @@
 
     <item
         android:title="Comedia"
-        android:id="@+id/genero_Comedia"/>
+        android:id="@+id/genero_comedia"/>
 
     <item
-        android:id="@+id/genero_Crimen"
+        android:id="@+id/genero_crimen"
         android:title="Crimen" />
 
     <item
@@ -45,10 +45,10 @@
 
     <item
         android:title="Terror"
-        android:id="@+id/genero_Terror"/>
+        android:id="@+id/genero_terror"/>
 
     <item
-        android:id="@+id/genero_Musica"
+        android:id="@+id/genero_musica"
         android:title="Musica" />
 
     <item
@@ -57,22 +57,22 @@
 
     <item
         android:title="Romance"
-        android:id="@+id/genero_Romance"/>
+        android:id="@+id/genero_romance"/>
 
     <item
-        android:id="@+id/genero_Ciencia_Ficcion"
+        android:id="@+id/genero_ciencia_ficcion"
         android:title="Ciencia Ficcion" />
 
     <item
-        android:id="@+id/genero_Peli_de_TV"
+        android:id="@+id/genero_peli_de_TV"
         android:title="Peli de TV" />
 
     <item
         android:title="Thriller"
-        android:id="@+id/genero_Thriller"/>
+        android:id="@+id/genero_thriller"/>
 
     <item
-        android:id="@+id/genero_Western"
+        android:id="@+id/genero_western"
         android:title="Western" />
 
     <item

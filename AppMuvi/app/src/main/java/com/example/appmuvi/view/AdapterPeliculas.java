@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.appmuvi.R;
 import com.example.appmuvi.model.Famoso;
 import com.example.appmuvi.model.Pelicula;
@@ -82,7 +83,7 @@ public class AdapterPeliculas extends RecyclerView.Adapter<AdapterPeliculas.View
 
         //metodo que le enseña al view holder a cargar un objeto en este caso el villano
         public void cargarPelicula(Pelicula pelicula){
-            imagenDePelicula.setImageResource(pelicula.getImagenDePelicula());
+            Glide.with(imagenDePelicula.getContext()).load(pelicula.generaURLImagen()).into(imagenDePelicula);
             textViewTitulo.setText(pelicula.getTitulo());
             textViewDirector.setText(pelicula.getDirector());
             textViewFechaDeLanzamiento.setText(pelicula.getFechaDeEstreno());

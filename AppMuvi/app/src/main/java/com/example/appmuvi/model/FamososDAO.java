@@ -15,6 +15,7 @@ import retrofit2.Response;
 public class FamososDAO extends PeliculaRetrofitDAO{
 
     private static final String BASE_URL = "https://api.themoviedb.org";
+    public static final String API_KEY = "41c70e6b99d8ae34c17c9c34fd81e344";
 
     public FamososDAO() {
         super(BASE_URL);
@@ -22,17 +23,17 @@ public class FamososDAO extends PeliculaRetrofitDAO{
 
     public void traerFamosos(final ListenerPelicula<List<Famoso>> listenerDelControler){
 
-        Call<ContainerPelicula> call = peliculasService.traerFamoso();
+        Call<ContainerFamoso> call = peliculasService.traerFamoso(API_KEY);
 
-        call.enqueue(new Callback<ContainerPelicula>() {
+        call.enqueue(new Callback<ContainerFamoso>() {
             @Override
-            public void onResponse(Call<ContainerPelicula> call, Response<ContainerPelicula> response) {
-                ContainerPelicula containerPelicula = response.body();
-                listenerDelControler.finish(containerPelicula.getResultado());
+            public void onResponse(Call<ContainerFamoso> call, Response<ContainerFamoso> response) {
+                ContainerFamoso containerPelicula = response.body();
+                listenerDelControler.finish(containerPelicula.getResults());
             }
 
             @Override
-            public void onFailure(Call<ContainerPelicula> call, Throwable t) {
+            public void onFailure(Call<ContainerFamoso> call, Throwable t) {
                 Log.d("ewfwq","dwsfaw");
 
             }

@@ -4,24 +4,27 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
+import javax.net.ssl.SSLContext;
+
 public class Pelicula implements Serializable {
+
+    public static final String BASE_URL = "https://image.tmdb.org/t/p/original";
 
     @SerializedName("title")
     private String titulo;
     private String director;
     @SerializedName("release_date")
     private String fechaDeEstreno;
+    @SerializedName("backdrop_path")
     private String imagenurl;
     @SerializedName("overview")
     private String sinopsis;
-    private int imagenDePelicula;
 
-    public Pelicula(String titulo, String director, String fechaDeEstreno, int imagenDePelicula) {
+    public Pelicula(String titulo, String director, String fechaDeEstreno) {
         this.titulo = titulo;
         this.director = director;
         this.fechaDeEstreno = fechaDeEstreno;
         this.sinopsis = sinopsis;
-        this.imagenDePelicula = imagenDePelicula;
     }
 
     public String getTitulo() {
@@ -64,11 +67,8 @@ public class Pelicula implements Serializable {
         sinopsis = sinopsis;
     }
 
-    public int getImagenDePelicula() {
-        return imagenDePelicula;
-    }
 
-    public void setImagenDePelicula(int imagenDePelicula) {
-        this.imagenDePelicula = imagenDePelicula;
+    public String generaURLImagen(){
+        return BASE_URL + imagenurl;
     }
 }

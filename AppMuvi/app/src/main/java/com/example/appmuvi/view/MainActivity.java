@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListaDePe
 
 
         pegarFragment(new FragmentListaDePeliculas());
-       // pegarFragmentFamoso(new FragmentListaFamosos());
+        pegarFragmentFamoso(new FragmentListaFamosos());
     }
 
 
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListaDePe
         Integer id = menuItem.getItemId();
 
         switch (id) {
-            case R.id.genero_Accion:
+            case R.id.genero_accion:
                 Toast.makeText(this, "Acceso a peliculas de Accion", Toast.LENGTH_LONG).show();
                 break;
 
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListaDePe
                 Toast.makeText(this, "Acceso a peliculas de Animacion", Toast.LENGTH_LONG).show();
                 break;
 
-            case R.id.genero_Aventura:
+            case R.id.genero_aventura:
                 Toast.makeText(this, "Acceso a peliculas de Aventura", Toast.LENGTH_LONG).show();
                 break;
 
@@ -69,11 +69,11 @@ public class MainActivity extends AppCompatActivity implements FragmentListaDePe
                 Toast.makeText(this, "Acceso a peliculas de Belica", Toast.LENGTH_LONG).show();
                 break;
 
-            case R.id.genero_Ciencia_Ficcion:
+            case R.id.genero_ciencia_ficcion:
                 Toast.makeText(this, "Acceso a peliculas de Ciencia Ficcion", Toast.LENGTH_LONG).show();
                 break;
 
-            case R.id.genero_Comedia:
+            case R.id.genero_comedia:
                 Toast.makeText(this, "Acceso a peliculas de Comedia", Toast.LENGTH_LONG).show();
                 break;
         }
@@ -124,24 +124,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListaDePe
                 .commit();
     }
 
-    private List<Famoso> crearLista(){
-        List<Famoso> famosoList = new ArrayList<>();
-
-        famosoList.add(new Famoso("Brad Pit","18/4/75",R.drawable.logomuviapp));
-        famosoList.add(new Famoso("Brad Pit","18/4/75",R.drawable.logomuviapp));
-        famosoList.add(new Famoso("Brad Pit","18/4/75",R.drawable.logomuviapp));
-        famosoList.add(new Famoso("Brad Pit","18/4/75",R.drawable.logomuviapp));
-        famosoList.add(new Famoso("Brad Pit","18/4/75",R.drawable.logomuviapp));
-        famosoList.add(new Famoso("Brad Pit","18/4/75",R.drawable.logomuviapp));
-        famosoList.add(new Famoso("Brad Pit","18/4/75",R.drawable.logomuviapp));
-        famosoList.add(new Famoso("Brad Pit","18/4/75",R.drawable.logomuviapp));
-        famosoList.add(new Famoso("Brad Pit","18/4/75",R.drawable.logomuviapp));
-        famosoList.add(new Famoso("Brad Pit","18/4/75",R.drawable.logomuviapp));
-
-
-        return famosoList;
-
-    }
 
     @Override
     public void recibirFamoso(Famoso famoso) {

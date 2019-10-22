@@ -6,13 +6,16 @@ import java.io.Serializable;
 
 public class Famoso implements Serializable {
 
+    public static final String BASE_URL = "https://image.tmdb.org/t/p/original";
+
     @SerializedName("name")
     private String nombre;
     @SerializedName("popularity")
     private String nacimiento;
-    private int imagenDeFamoso;
+    @SerializedName("profile_path")
+    private String imagenDeFamoso;
 
-    public Famoso(String nombre, String nacimiento, int imagenDeFamoso){
+    public Famoso(String nombre, String nacimiento, String imagenDeFamoso){
         this.nombre = nombre;
         this.nacimiento = nacimiento;
         this.imagenDeFamoso = imagenDeFamoso;
@@ -22,23 +25,17 @@ public class Famoso implements Serializable {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public String getNacimiento() {
         return nacimiento;
     }
 
-    public void setNacimiento(String nacimiento) {
-        this.nacimiento = nacimiento;
-    }
 
-    public int getImagenDePelicula() {
+    public String getImagenDePelicula() {
         return imagenDeFamoso;
     }
 
-    public void setImagenDePelicula(int imagenDeFamoso) {
-        this.imagenDeFamoso = imagenDeFamoso;
+    public String generaURLImagen(){
+        return BASE_URL + imagenDeFamoso;
     }
 }
