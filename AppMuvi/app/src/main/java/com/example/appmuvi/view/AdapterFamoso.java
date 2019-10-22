@@ -50,9 +50,7 @@ public class AdapterFamoso extends RecyclerView.Adapter<AdapterFamoso.ViewHolder
     }
 
     @Override
-    public int getItemCount() {
-        return famosoList.size();
-    }
+    public int getItemCount() {return famosoList.size();}
 
     public class ViewHolderFamoso extends RecyclerView.ViewHolder{
 

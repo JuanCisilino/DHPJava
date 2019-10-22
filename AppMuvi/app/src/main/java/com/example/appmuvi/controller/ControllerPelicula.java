@@ -1,5 +1,7 @@
 package com.example.appmuvi.controller;
 
+import com.example.appmuvi.model.Famoso;
+import com.example.appmuvi.model.FamososDAO;
 import com.example.appmuvi.utils.ListenerPelicula;
 import com.example.appmuvi.model.Pelicula;
 import com.example.appmuvi.model.PeliculaDAO;
@@ -33,11 +35,11 @@ public class ControllerPelicula {
 
         });
     }
-
+*/
     public void traerFamoso(final ListenerPelicula<List<Famoso>> listenerDeLaVistaFamoso) {
         FamososDAO famososDAO = new FamososDAO();
 
-        famososDAO.traerFamoso(new ListenerPelicula<List<Famoso>>() {
+        famososDAO.traerFamosos(new ListenerPelicula<List<Famoso>>() {
             @Override
             public void finish(List<Famoso> result) {
                    listenerDeLaVistaFamoso.finish(result);
@@ -45,7 +47,7 @@ public class ControllerPelicula {
 
         });
 
-    }*/
+    }
 }
 
 

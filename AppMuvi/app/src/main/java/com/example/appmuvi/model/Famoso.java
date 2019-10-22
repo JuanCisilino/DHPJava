@@ -1,11 +1,15 @@
 package com.example.appmuvi.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 public class Famoso implements Serializable {
 
-
-    private String nombre, nacimiento;
+    @SerializedName("name")
+    private String nombre;
+    @SerializedName("popularity")
+    private String nacimiento;
     private int imagenDeFamoso;
 
     public Famoso(String nombre, String nacimiento, int imagenDeFamoso){

@@ -37,12 +37,12 @@ public class FragmentListaFamosos extends Fragment implements AdapterFamoso.List
         final AdapterFamoso adapterFamoso = new AdapterFamoso(this);
 
         ControllerPelicula peliculaController = new ControllerPelicula();
-       /* peliculaController.traePelicula(new ListenerPelicula<List<Pelicula>>() {
+        peliculaController.traerFamoso(new ListenerPelicula<List<Famoso>>() {
             @Override
-            public void finish(List<Pelicula> result) {
+            public void finish(List<Famoso> result) {
                 adapterFamoso.setFamosoList(result);
             }
-        });*/
+        });
 
         //setearle el layout manager (
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
