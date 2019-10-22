@@ -36,13 +36,13 @@ public class ControllerPelicula {
         });
     }
 */
-    public void traerFamoso(final ListenerPelicula<List<Famoso>> listenerDeLaVistaFamoso) {
+    public void traeFamoso(final ListenerPelicula<List<Famoso>> listenerDeLaVistaFamoso) {
         FamososDAO famososDAO = new FamososDAO();
 
         famososDAO.traerFamosos(new ListenerPelicula<List<Famoso>>() {
             @Override
-            public void finish(List<Famoso> result) {
-                   listenerDeLaVistaFamoso.finish(result);
+            public void finish(List<Famoso> resultado) {
+                   listenerDeLaVistaFamoso.finish(resultado);
             }
 
         });

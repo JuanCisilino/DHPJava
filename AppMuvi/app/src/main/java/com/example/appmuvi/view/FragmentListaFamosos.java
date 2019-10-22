@@ -37,10 +37,10 @@ public class FragmentListaFamosos extends Fragment implements AdapterFamoso.List
         final AdapterFamoso adapterFamoso = new AdapterFamoso(this);
 
         ControllerPelicula peliculaController = new ControllerPelicula();
-        peliculaController.traerFamoso(new ListenerPelicula<List<Famoso>>() {
+        peliculaController.traeFamoso(new ListenerPelicula<List<Famoso>>() {
             @Override
-            public void finish(List<Famoso> result) {
-                adapterFamoso.setFamosoList(result);
+            public void finish(List<Famoso> resultado) {
+                adapterFamoso.setFamosoList(resultado);
             }
         });
 

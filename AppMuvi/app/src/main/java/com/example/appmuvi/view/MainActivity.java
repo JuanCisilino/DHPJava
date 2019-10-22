@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity implements FragmentListaDePe
 
 
 
-        pegarFragmentFamoso(new FragmentListaFamosos());
-        pegarFragment(new FragmentListaDePeliculas());
 
+        pegarFragment(new FragmentListaDePeliculas());
+        pegarFragmentFamoso(new FragmentListaFamosos());
     }
 
 

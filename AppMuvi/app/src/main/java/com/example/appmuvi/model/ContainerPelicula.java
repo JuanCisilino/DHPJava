@@ -18,4 +18,7 @@ public class ContainerPelicula {
     public void setResults(List<Pelicula> results) {
         this.results = results;
     }
+
+    public void setResultado(List<Famoso> resultado) {this.resultado = resultado;}
+
 }

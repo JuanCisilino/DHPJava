@@ -44,7 +44,7 @@ public class AdapterFamoso extends RecyclerView.Adapter<AdapterFamoso.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterFamoso.ViewHolderFamoso holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolderFamoso holder, int position) {
         Famoso famosoAMostrar = famosoList.get(position);
         holder.cargarFamoso(famosoAMostrar);
     }

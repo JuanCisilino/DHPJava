@@ -46,7 +46,6 @@ public class AdapterPeliculas extends RecyclerView.Adapter<AdapterPeliculas.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolderPeliculas holder, int position) {
         Pelicula peliculaMostrada = peliculaList.get(position);
-
         holder.cargarPelicula(peliculaMostrada);
 
     }
