@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListaDePe
 
 
         pegarFragment(new FragmentListaDePeliculas());
-        pegarFragmentFamoso(new FragmentListaFamosos());
+       // pegarFragmentFamoso(new FragmentListaFamosos());
     }
 
 
