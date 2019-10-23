@@ -7,10 +7,16 @@ import retrofit2.http.Query;
 
 public interface ServiceInterface {
 
-    @GET("/3/movie/popular")
+    @GET("movie/popular")
     Call<ContainerPelicula> traerPelicula(@Query("api_key") String apiKey);
 
-    @GET("/3/person/popular")
+    @GET("movie/{movie_id}/credits")
+    Call<Credits> traerCredits(@Path("movie_id") Integer movieId,@Query("api_key") String apiKey);
+
+    @GET("person/popular")
     Call<ContainerFamoso> traerFamoso(@Query("api_key") String apiKey);
+
+
+
 
 }

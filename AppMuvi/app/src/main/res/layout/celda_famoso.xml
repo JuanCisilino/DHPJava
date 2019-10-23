@@ -6,8 +6,8 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:cardUseCompatPadding="true"
         app:cardElevation="5dp"
         app:cardCornerRadius="10dp"
@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/celda_famosos_imagen"
-            android:layout_width="100dp"
-            android:layout_height="120dp"
+            android:layout_width="97dp"
+            android:layout_height="107dp"
             android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/logomuvi" />
 
@@ -27,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="115dp"
             android:gravity="center_horizontal"
+            android:textAlignment="inherit"
             android:text="Nombre"
             android:textSize="20dp" />
 

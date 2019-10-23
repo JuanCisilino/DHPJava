@@ -2,7 +2,7 @@ package com.example.appmuvi.model;
 
 import android.util.Log;
 
-import com.example.appmuvi.utils.ListenerPelicula;
+import com.example.appmuvi.utils.ResultListener;
 
 import java.util.List;
 
@@ -12,14 +12,14 @@ import retrofit2.Response;
 
 public class PeliculaDAO extends PeliculaRetrofitDAO{
 
-    private static final String BASE_URL = "https://api.themoviedb.org";
+    private static final String BASE_URL = "https://api.themoviedb.org/3/";
     public static final String API_KEY = "41c70e6b99d8ae34c17c9c34fd81e344";
 
     public PeliculaDAO() {
         super(BASE_URL);
     }
 
-    public void traerPeliculas(final ListenerPelicula<List<Pelicula>> listenerDelControler){
+    public void traerPeliculas(final ResultListener<List<Pelicula>> listenerDelControler){
 
         Call<ContainerPelicula> call = peliculasService.traerPelicula(API_KEY);
 
@@ -39,7 +39,24 @@ public class PeliculaDAO extends PeliculaRetrofitDAO{
 
     }
 
-    /*public void traerPelicula(String categoria, final ListenerPelicula<Pelicula> listenerDelControler) {
+    public  void traerCredits(final ResultListener<Credits> resultListenerController,Integer movieId){
+        Call<Credits> creditsCall = peliculasService.traerCredits(movieId,API_KEY);
+
+        creditsCall.enqueue(new Callback<Credits>() {
+            @Override
+            public void onResponse(Call<Credits> call, Response<Credits> response) {
+                Credits resultsCredit = response.body();
+                resultListenerController.finish(resultsCredit);
+            }
+
+            @Override
+            public void onFailure(Call<Credits> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+
+    /*public void traerPelicula(String categoria, final ResultListener<Pelicula> listenerDelControler) {
         Call<Pelicula> call = peliculasService.traerPeliPorCategoria(categoria);
 
         call.enqueue(new Callback<Pelicula>() {

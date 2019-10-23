@@ -3,6 +3,7 @@ package com.example.appmuvi.model;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import javax.net.ssl.SSLContext;
 
@@ -12,6 +13,7 @@ public class Pelicula implements Serializable {
 
     @SerializedName("title")
     private String titulo;
+    private Integer id;
     private String director;
     @SerializedName("release_date")
     private String fechaDeEstreno;
@@ -20,10 +22,12 @@ public class Pelicula implements Serializable {
     @SerializedName("overview")
     private String sinopsis;
 
-    public Pelicula(String titulo, String director, String fechaDeEstreno) {
+    public Pelicula(String titulo, Integer id, String director, String fechaDeEstreno, String imagenurl, String sinopsis) {
         this.titulo = titulo;
+        this.id = id;
         this.director = director;
         this.fechaDeEstreno = fechaDeEstreno;
+        this.imagenurl = imagenurl;
         this.sinopsis = sinopsis;
     }
 
@@ -67,8 +71,29 @@ public class Pelicula implements Serializable {
         sinopsis = sinopsis;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String generaURLImagen(){
         return BASE_URL + imagenurl;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pelicula pelicula = (Pelicula) o;
+        return id.equals(pelicula.id);
+    }
+
+  /*  @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }*/
 }

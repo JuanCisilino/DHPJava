@@ -10,14 +10,10 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.appmuvi.R;
-import com.example.appmuvi.controller.ControllerPelicula;
 import com.example.appmuvi.model.Famoso;
 import com.example.appmuvi.model.Pelicula;
-import com.example.appmuvi.utils.ListenerPelicula;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
-import java.util.List;
 //Api Key--> https://api.themoviedb.org/3/movie/550?api_key=41c70e6b99d8ae34c17c9c34fd81e344
 public class MainActivity extends AppCompatActivity implements FragmentListaDePeliculas.ListenerDeFragment, FragmentListaFamosos.ListenerDeFragment,
         NavigationView.OnNavigationItemSelectedListener {
@@ -99,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListaDePe
 
         ControllerPelicula peliculaController = new ControllerPelicula();
 
-        peliculaController.traePeli(this,new ListenerPelicula<Pelicula>() {
+        peliculaController.traePeli(this,new ResultListener<Pelicula>() {
             @Override
             public void finish(Pelicula result) {
                 Toast.makeText(MainActivity.this, pelicula.getTitulo(), Toast.LENGTH_LONG).show();

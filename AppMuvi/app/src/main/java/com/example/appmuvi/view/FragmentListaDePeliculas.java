@@ -13,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.appmuvi.utils.ListenerPelicula;
+import com.example.appmuvi.utils.ResultListener;
 import com.example.appmuvi.R;
 import com.example.appmuvi.controller.ControllerPelicula;
 import com.example.appmuvi.model.Pelicula;
@@ -41,7 +41,7 @@ public class FragmentListaDePeliculas extends Fragment implements AdapterPelicul
         final AdapterPeliculas adapterPeliculas = new AdapterPeliculas(this);
 
         ControllerPelicula peliculaController = new ControllerPelicula();
-        peliculaController.traePelicula(new ListenerPelicula<List<Pelicula>>() {
+        peliculaController.traePelicula(new ResultListener<List<Pelicula>>() {
             @Override
             public void finish(List<Pelicula> result) {
                 adapterPeliculas.setPeliculaList(result);
