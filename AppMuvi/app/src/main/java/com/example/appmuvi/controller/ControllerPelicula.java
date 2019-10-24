@@ -25,16 +25,18 @@ public class ControllerPelicula {
                     peliculaDao.traerCredits(new ResultListener<Credits>() {
                         @Override
                         public void finish(Credits resultCredit) {
+                            if(resultCredit != null){
                             Integer id = resultCredit.getId();
                             String directorName = resultCredit.getCrew().get(0).getName(); //Nombre del director (supuestamente)
                             for (Pelicula pelicula1 : resultPelicula) {
-                                if(pelicula1.getId().equals(id)){
+                                if(pelicula1.getId().equals(id)) {
                                     pelicula1.setDirector(directorName);
+                                }
                                     listenerDeLaVista.finish(resultPelicula);
                                 }
                             }
                         }
-                    },movieId);
+                    }, movieId);
                 }
 
                 //listenerDeLaVista.finish(result);
@@ -66,8 +68,10 @@ public class ControllerPelicula {
                     famososDAO.traerPersona(new ResultListener<Credits>() {
                         @Override
                         public void finish(Credits result) {
-                            String cumple = result.getBirthday();
-                            famoso.setNacimiento(cumple);
+                            if(result != null){
+                                String cumple = result.getBirthday();
+                                famoso.setNacimiento(cumple);
+                            }
                             listenerDeLaVistaFamoso.finish(resultado);
                         }
                     }, id);
