@@ -39,6 +39,23 @@ public class FamososDAO extends PeliculaRetrofitDAO{
 
     }
 
+    public  void traerPersona(final ResultListener<Credits> resultListenerController,Integer personId){
+        Call<Credits> creditsCall = peliculasService.traerPersona(personId,API_KEY);
+
+        creditsCall.enqueue(new Callback<Credits>() {
+            @Override
+            public void onResponse(Call<Credits> call, Response<Credits> response) {
+                Credits resultsCredit = response.body();
+                resultListenerController.finish(resultsCredit);
+            }
+
+            @Override
+            public void onFailure(Call<Credits> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+
    /* public void traerFamoso(ResultListener<List<Famoso>> listListenerPelicula) {
 
         famosoList.add(new Famoso("Brad Pit","18/4/75", R.drawable.logomuviapp));

@@ -56,12 +56,23 @@ public class ControllerPelicula {
     }
 */
     public void traeFamoso(final ResultListener<List<Famoso>> listenerDeLaVistaFamoso) {
-        FamososDAO famososDAO = new FamososDAO();
+        final FamososDAO famososDAO = new FamososDAO();
 
         famososDAO.traerFamosos(new ResultListener<List<Famoso>>() {
             @Override
-            public void finish(List<Famoso> resultado) {
-                   listenerDeLaVistaFamoso.finish(resultado);
+            public void finish(final List<Famoso> resultado) {
+                for (final Famoso famoso : resultado) {
+                    Integer id = famoso.getId();
+                    famososDAO.traerPersona(new ResultListener<Credits>() {
+                        @Override
+                        public void finish(Credits result) {
+                            String cumple = result.getBirthday();
+                            famoso.setNacimiento(cumple);
+                            listenerDeLaVistaFamoso.finish(resultado);
+                        }
+                    }, id);
+                }
+
             }
 
         });

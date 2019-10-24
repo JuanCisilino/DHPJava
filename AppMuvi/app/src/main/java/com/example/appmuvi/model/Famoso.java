@@ -14,11 +14,21 @@ public class Famoso implements Serializable {
     private String nacimiento;
     @SerializedName("profile_path")
     private String imagenDeFamoso;
+    private Integer id;
 
-    public Famoso(String nombre, String nacimiento, String imagenDeFamoso){
+    public Famoso(String nombre, String nacimiento, String imagenDeFamoso, Integer id){
         this.nombre = nombre;
         this.nacimiento = nacimiento;
         this.imagenDeFamoso = imagenDeFamoso;
+        this.id = id;
+    }
+
+    public void setNacimiento(String nacimiento) {
+        this.nacimiento = nacimiento;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public String getNombre() {

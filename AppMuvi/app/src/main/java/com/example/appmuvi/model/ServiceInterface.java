@@ -16,6 +16,8 @@ public interface ServiceInterface {
     @GET("person/popular")
     Call<ContainerFamoso> traerFamoso(@Query("api_key") String apiKey);
 
+    @GET("person/{person_id}")
+    Call<Credits> traerPersona(@Path("person_id") Integer personId,@Query("api_key") String apiKey);
 
 
 

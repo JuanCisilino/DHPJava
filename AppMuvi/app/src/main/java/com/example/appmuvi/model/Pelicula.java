@@ -17,7 +17,7 @@ public class Pelicula implements Serializable {
     private String director;
     @SerializedName("release_date")
     private String fechaDeEstreno;
-    @SerializedName("backdrop_path")
+    @SerializedName("poster_path")
     private String imagenurl;
     @SerializedName("overview")
     private String sinopsis;
