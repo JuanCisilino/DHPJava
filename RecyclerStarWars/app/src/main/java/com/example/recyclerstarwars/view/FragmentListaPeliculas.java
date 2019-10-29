@@ -54,8 +54,6 @@ public class FragmentListaPeliculas extends Fragment implements AdapterPeliculas
         //setearle el adapter
         recyclerView.setAdapter(adapterPeliculas);
 
-
-
         return view;
     }
 

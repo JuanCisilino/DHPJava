@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.nuevomercadoabierto.ListenerArticulo;
+import com.example.nuevomercadoabierto.utils.ListenerArticulo;
 import com.example.nuevomercadoabierto.R;
 import com.example.nuevomercadoabierto.controller.ControllerArticulos;
 import com.example.nuevomercadoabierto.model.Articulo;

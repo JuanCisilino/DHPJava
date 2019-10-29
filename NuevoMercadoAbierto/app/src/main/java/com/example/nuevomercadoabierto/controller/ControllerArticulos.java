@@ -1,9 +1,6 @@
 package com.example.nuevomercadoabierto.controller;
 
-import android.os.Bundle;
-
-import com.example.nuevomercadoabierto.ListenerArticulo;
-import com.example.nuevomercadoabierto.R;
+import com.example.nuevomercadoabierto.utils.ListenerArticulo;
 import com.example.nuevomercadoabierto.model.Articulo;
 import com.example.nuevomercadoabierto.model.ArticulosDAO;
 
