@@ -11,16 +11,16 @@ import retrofit2.Response;
 public class ProductosDao extends RetrofitProductosDao {
 
     public static final String BASE_URL = "https://api.mercadolibre.com/sites/MLA/";
+    public static final String PRODUCTOSELECCIONADO = "Producto";
 
-    private String productoSeleccionado;
 
     public ProductosDao() {
         super(BASE_URL);
     }
 
-    public void traerPruductos(final ResultListener<List<Producto>> listenerDelControler, String productoSeleccionado) {
+    public void traerPruductos(final ResultListener<List<Producto>> listenerDelControler) {
 
-        Call<ContenedorProducto> call = serviceProducto.traeListadePoducto(productoSeleccionado);
+        Call<ContenedorProducto> call = serviceProducto.traeListadePoducto(PRODUCTOSELECCIONADO);
 
         call.enqueue(new Callback<ContenedorProducto>() {
             @Override

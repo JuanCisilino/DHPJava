@@ -21,7 +21,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fragmentArticulos_recycler"
+        android:id="@+id/contenedor_recycler_fragmentLista"
         android:layout_marginTop="90dp"
         android:orientation="vertical"
         android:layout_width="match_parent"

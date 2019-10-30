@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import com.example.retrofit_ejercicio2.R;
 import com.example.retrofit_ejercicio2.controller.ControlerProducto;
 import com.example.retrofit_ejercicio2.model.Producto;
+import com.example.retrofit_ejercicio2.model.ProductosDao;
 import com.example.retrofit_ejercicio2.utils.ResultListener;
 
 import java.util.List;
@@ -33,6 +34,7 @@ public class Fragment_ListaDeProductos extends Fragment implements AdapterProduc
     private EditText consulta;
 
 
+    Bundle bundle = new Bundle();
     AdapterProductos adapterProductos;
 
     @Override
@@ -42,7 +44,7 @@ public class Fragment_ListaDeProductos extends Fragment implements AdapterProduc
         View view = inflater.inflate(R.layout.fragment__lista_de_productos, container, false);
 
         botonConsulta = view.findViewById(R.id.boton_Consulta_fragmentLista);
-        recyclerView = view.findViewById(R.id.fragmentArticulos_recycler);
+        recyclerView = view.findViewById(R.id.contenedor_recycler_fragmentLista);
         consulta = view.findViewById(R.id.editText_fragmentLista);
 
         adapterProductos = new AdapterProductos(this);
@@ -51,16 +53,20 @@ public class Fragment_ListaDeProductos extends Fragment implements AdapterProduc
         botonConsulta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                bundle.putString(ProductosDao.PRODUCTOSELECCIONADO, consulta.getText().toString());
                 controlerProducto.traerProductos(new ResultListener<List<Producto>>() {
                     @Override
                     public void finish(List<Producto> result) {
                         adapterProductos.setProductoList(result);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-                        recyclerView.setAdapter(adapterProductos);
                     }
-                }, consulta.toString());
+                });
+
             }
         });
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),
+                RecyclerView.VERTICAL, false));
+        recyclerView.setAdapter(adapterProductos);
 
         return view;
     }

@@ -10,7 +10,7 @@ public class ControlerProducto {
 
     private String consulta;
 
-    public void traerProductos(final ResultListener<List<Producto>> listenerDeLaVista, String Consulta) {
+    public void traerProductos(final ResultListener<List<Producto>> listenerDeLaVista) {
         ProductosDao productosDao = new ProductosDao();
 
         productosDao.traerPruductos(new ResultListener<List<Producto>>() {
@@ -18,6 +18,6 @@ public class ControlerProducto {
             public void finish(List<Producto> result) {
                 listenerDeLaVista.finish(result);
             }
-        }, consulta);
+        });
     }
 }
