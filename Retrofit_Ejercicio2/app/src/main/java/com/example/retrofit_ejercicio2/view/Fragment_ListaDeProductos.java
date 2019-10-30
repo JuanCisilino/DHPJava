@@ -78,8 +78,6 @@ public class Fragment_ListaDeProductos extends Fragment implements AdapterProduc
 
     public interface ListenerDeFragment {
         public void recibirConsulta(Producto producto);
-        public void recibirBoton();
-
 
     }
 }
