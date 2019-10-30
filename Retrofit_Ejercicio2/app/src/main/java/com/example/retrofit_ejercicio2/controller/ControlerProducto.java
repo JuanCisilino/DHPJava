@@ -10,10 +10,10 @@ public class ControlerProducto {
 
     private String consulta;
 
-    public void traerProductos(final ResultListener<List<Producto>> listenerDeLaVista) {
+    public void traerProductos(String consulta, final ResultListener<List<Producto>> listenerDeLaVista) {
         ProductosDao productosDao = new ProductosDao();
 
-        productosDao.traerPruductos(new ResultListener<List<Producto>>() {
+        productosDao.traerPruductos(consulta, new ResultListener<List<Producto>>() {
             @Override
             public void finish(List<Producto> result) {
                 listenerDeLaVista.finish(result);

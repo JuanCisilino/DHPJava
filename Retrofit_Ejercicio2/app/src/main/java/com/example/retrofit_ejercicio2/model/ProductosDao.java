@@ -18,7 +18,7 @@ public class ProductosDao extends RetrofitProductosDao {
         super(BASE_URL);
     }
 
-    public void traerPruductos(final ResultListener<List<Producto>> listenerDelControler) {
+    public void traerPruductos(String PRODUCTOSELECCIONADO, final ResultListener<List<Producto>> listenerDelControler) {
 
         Call<ContenedorProducto> call = serviceProducto.traeListadePoducto(PRODUCTOSELECCIONADO);
 

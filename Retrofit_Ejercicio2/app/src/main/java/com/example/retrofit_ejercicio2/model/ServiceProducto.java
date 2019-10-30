@@ -8,5 +8,5 @@ import retrofit2.http.Query;
 public interface ServiceProducto {
 
     @GET("search")
-    Call<ContenedorProducto> traeListadePoducto(@Query("q=") String nombreProducto);
+    Call<ContenedorProducto> traeListadePoducto(@Query("q") String nombreProducto);
 }

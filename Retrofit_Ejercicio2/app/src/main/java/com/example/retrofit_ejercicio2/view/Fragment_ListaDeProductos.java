@@ -32,6 +32,7 @@ public class Fragment_ListaDeProductos extends Fragment implements AdapterProduc
     private RecyclerView recyclerView;
     private ListenerDeFragment listenerDeFragment;
     private EditText consulta;
+    private String consul;
 
 
     Bundle bundle = new Bundle();
@@ -54,7 +55,8 @@ public class Fragment_ListaDeProductos extends Fragment implements AdapterProduc
             @Override
             public void onClick(View view) {
                 bundle.putString(ProductosDao.PRODUCTOSELECCIONADO, consulta.getText().toString());
-                controlerProducto.traerProductos(new ResultListener<List<Producto>>() {
+                consul = consulta.getText().toString();
+                controlerProducto.traerProductos(consul, new ResultListener<List<Producto>>() {
                     @Override
                     public void finish(List<Producto> result) {
                         adapterProductos.setProductoList(result);

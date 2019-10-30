@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.retrofit_ejercicio2.R;
 import com.example.retrofit_ejercicio2.model.Producto;
 
@@ -77,7 +78,7 @@ public class AdapterProductos extends RecyclerView.Adapter<AdapterProductos.View
 
         //metodo que le enseña al view holder a cargar un objeto en este caso el villano
         public void cargarProducto(Producto producto){
-            imagenDeArticulo.setImageResource(Integer.parseInt(producto.getFoto()));
+            Glide.with(imagenDeArticulo.getContext()).load(producto.getThumbnail()).into(imagenDeArticulo);
             textViewNombreArticulo.setText(producto.getTitle());
             textViewPrecio.setText(producto.getPrice().toString());
 

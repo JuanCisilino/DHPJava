@@ -15,7 +15,7 @@
     <TextView
         android:id="@+id/textView_nombre_producto"
         android:layout_width="218dp"
-        android:layout_height="35dp"
+        android:layout_height="70dp"
         android:layout_marginLeft="3dp"
         android:layout_marginTop="25dp"
         android:layout_toRightOf="@+id/imagen_celda_producto"
@@ -27,14 +27,12 @@
         android:id="@+id/textView_precio_producto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="95dp"
         android:layout_toRightOf="@+id/imagen_celda_producto"
         android:gravity="center_horizontal"
         android:text="precio"
         android:textSize="25dp" />
-
-
 
 
 </RelativeLayout>

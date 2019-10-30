@@ -4,24 +4,25 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
+import static com.example.retrofit_ejercicio2.model.ProductosDao.BASE_URL;
+
 public class Producto implements Serializable {
 
 
     private String title;
-    private Integer price;
-    @SerializedName("thumbnail")
-    private String foto;
+    private String price;
+    private String thumbnail;
 
-    public Producto(String title, Integer price, String foto) {
+    public Producto(String title, String price, String thumbnail) {
         this.title = title;
         this.price = price;
-        this.foto = foto;
+        this.thumbnail = thumbnail;
     }
 
     public Producto(){
         this.title = title;
         this.price = price;
-        this.foto = foto;
+        this.thumbnail = thumbnail;
     }
 
     public String getTitle() {
@@ -32,19 +33,19 @@ public class Producto implements Serializable {
         this.title = title;
     }
 
-    public Integer getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
-    public String getFoto() {
-        return foto;
+    public String getThumbnail() {
+        return thumbnail;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 }
