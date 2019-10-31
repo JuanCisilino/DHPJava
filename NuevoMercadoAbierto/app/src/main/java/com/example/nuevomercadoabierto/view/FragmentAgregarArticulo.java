@@ -57,12 +57,6 @@ public class FragmentAgregarArticulo extends Fragment {
                 Articulo articulo = new Articulo(nombre,costo,description,R.drawable.ic_launcher_foreground);
 
                 listerDeAgregarArticulo.agregararticulo(articulo);
-
-
-
-
-
-
             }
         });
 

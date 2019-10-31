@@ -7,10 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.nuevomercadoabierto.ListenerArticulo;
 import com.example.nuevomercadoabierto.R;
 import com.example.nuevomercadoabierto.model.Articulo;
 

@@ -23,10 +23,6 @@ public class Fragment_DetallePelicula extends Fragment {
     private TextView textViewTitulo, textViewSinopsis;
 
 
-    public Fragment_DetallePelicula() {
-        // Required empty public constructor
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
