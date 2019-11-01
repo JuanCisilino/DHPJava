@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/train"
+        android:icon="@drawable/ic_train_black_24dp"
+        android:title="train"/>
+    <item
+        android:id="@+id/child"
+        android:icon="@drawable/ic_child_care_black_24dp"
+        android:title="child care"/>
+
+    <item
+        android:id="@+id/triste"
+        android:icon="@drawable/ic_sentiment_very_dissatisfied_black_24dp"
+        android:title="cara triste"/>
+
+</menu>
